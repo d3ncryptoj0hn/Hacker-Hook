@@ -18,6 +18,7 @@
   git clone https://github.com/johnsmith80/Hacker-Hook.git
   cd Hacker-Hook
   ./install.sh
+  unzip webpage.zip
   sudo ./hackerhook.sh.sh
 ```
 #### if ngrok failed or not compatible for your device. download it on there website: [NGROK](https://ngrok.com/)
