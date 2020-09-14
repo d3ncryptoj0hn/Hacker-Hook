@@ -25,7 +25,8 @@ sudo mv ngrok /usr/local/bin/
 printf "${BGreen}Moving ngrok > /usr/local/bin/\n"
 sleep 1
 printf "${BGreen}Done!\n"
-printf "run 'Sudo ./hackerhook.sh'\n\n"
+printf "Please do 'unzip webpage.zip'\n"
+printf "then run 'Sudo ./hackerhook.sh'\n\n"
 exit 1
 else
 printf "${BRed}Please Download Ngrok!\n"
