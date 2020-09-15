@@ -351,10 +351,10 @@ cd webpage/$site && xterm -geometry 90x26+1000 -hold -T "PHP server" -e "php -S 
 sleep 5
 printf "${BGreen}OK.${clear}\n"
 printf "${Yellow}Starting ${BGreen}LocalTunnel ${Green}server\n"
-xterm -hold -geometry 90x26+1000+1000 -T "LocalTunnel server" -e "lt --port 443 --subdomain $site-com" > /dev/null 2>&1 &
+xterm -hold -geometry 90x26+1000+1000 -T "LocalTunnel server" -e "lt --port 443 --subdomain wmw-$site-com" > /dev/null 2>&1 &
 sleep 10
 printf "${BGreen}OK.${clear}\n\n"
-printf "${BYellow}Your URL name is: ${BGreen}https://$site-com.loca.lt\n"
+printf "${BYellow}Your URL name is: ${BGreen}https://wmw-$site-com.loca.lt\n"
 checkfound
 #===============================================
 }
