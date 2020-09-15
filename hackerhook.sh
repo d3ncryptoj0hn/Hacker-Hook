@@ -361,8 +361,8 @@ checkfound
 
 server() {
 printf "${Red}[8${Red}]${White}Choose your host server\n"
-printf "${Red}[${Blue}N${Red}]${Green} NGROK server (Recomended)\n"
-printf "${Red}[${Blue}L${Red}]${Green} Local Tunnel server (Sometimes Doesnt Work Well)\n"
+printf "${Red}[${Blue}N${Red}]${Green} NGROK server ${BYellow}(${BGreen}Recomended${BYellow})\n"
+printf "${Red}[${Blue}L${Red}]${Green} Local Tunnel server ${BYellow}(${BRed}Sometimes Doesnt Work Well${BYellow})\n"
 echo ""
 read -p "Server: " host
 
