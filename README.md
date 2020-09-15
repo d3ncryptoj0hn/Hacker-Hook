@@ -21,6 +21,10 @@
   unzip webpage.zip
   sudo ./hackerhook.sh.sh
 ```
+## Caution:
+#### if localtunnel server give you an error like URL doesnt match. maybe the name doesn't allowed to use.
+#### then use the url that LocalTunnel provide to you. will try to customize the link name.
+#### dont use the same url all the time. thats make the localtunnel triggered to block your requested url-name
 #### if ngrok failed or not compatible for your device. download it on there website: [NGROK](https://ngrok.com/)
 #### mv on the DarkPhisher directory, unzip the file, then run the dependencies.sh again
 ```  
