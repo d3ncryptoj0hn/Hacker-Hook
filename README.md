@@ -35,5 +35,5 @@
 Follow me:
 + [Facebook](https://web.facebook.com/h4ckitnow)
 + [Tiktok](https://www.tiktok.com/@johnsmith0911)
-+ [Twitter](https://twitter.com/John44233759)
++ [Twitter](https://twitter.com/J0hnSm1th80)
 + [Youtube](https://www.youtube.com/channel/UCV5gF3dWxUOFoGA7P9NGviQ)
