@@ -6,7 +6,7 @@
 
 ## Pentester Alert:
 #### Warning Do not user for illegal purposes. any illegal use of this tool is not my responsibility.
-#### Use for Educational Purposes only. [Issue](https://github.com/johnsmith80/Hacker-Hook/issues) and [Pull request](https://github.com/johnsmith80/Hacker-Hook/pulls) Please Feel free to ask request add some site's.
+#### Use for Educational Purposes only. [Issue](https://github.com/johnsmith80/Hacker-Hook/issues) and [Pull request](https://github.com/johnsmith80/Hacker-Hook/pulls) Please Feel free to ask request add some site's. and checkout other [Releases](https://github.com/johnsmith80/Hacker-Hook/releases)
 
 ## example:
 
