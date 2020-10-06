@@ -1,5 +1,5 @@
 #!/bin/bash
-# darkphish v2.1
+# darkphish v2.2
 # color
 # Reset
 clear='\033[0m'       # Text Reset
