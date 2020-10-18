@@ -8,6 +8,20 @@
 #### Warning Do not user for illegal purposes. any illegal use of this tool is not my responsibility.
 #### Use for Educational Purposes only. [Issue](https://github.com/johnsmith80/Hacker-Hook/issues) and [Pull request](https://github.com/johnsmith80/Hacker-Hook/pulls) Please Feel free to ask request add some site's. and checkout other [Releases](https://github.com/johnsmith80/Hacker-Hook/releases)
 
+## Hacker-Hook Feature:
++ Advance 36 Phishing Pages
++ Hosted LocalTunnel, Ngrok
++ More Advance and Secured tunneling
++ Generate a best link for you
++ Easy, Fast & Convenient Phishing attack
++ Separated Cred's stored
++ Monitor for incoming Cred's
++ Added flavor for more realistic hacking
+
+
+### Server:
++ NGROK click [here](https://ngrok.com/) download & install
++ LocalTunnel click [here](https://www.npmjs.com/package/localtunnel) download & install
 ## example:
 
 <img src="img/image.png" width="800" >
