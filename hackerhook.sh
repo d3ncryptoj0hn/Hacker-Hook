@@ -1,5 +1,5 @@
 #!/bin/bash
-# darkphish v2.2
+# darkphish v2.4
 # color
 # Reset
 clear='\033[0m'       # Text Reset
@@ -421,7 +421,7 @@ exit 1
 }
 
 getcredentials() {
-printf "${Yellow}Waiting credentials ...\e[0m\n"
+printf "${Yellow}Up and Running ...\e[0m\n"
 while [ true ]; do
 
 
