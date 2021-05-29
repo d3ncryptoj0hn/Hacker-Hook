@@ -21,6 +21,7 @@ exit 1
 fi
 if [[ ngrok ]]; then
 printf "${BGreen}Yey ngrok is here!\n"
+chmod +x ngrok
 sudo mv ngrok /usr/local/bin/
 printf "${BGreen}Moving ngrok > /usr/local/bin/\n"
 sleep 1
