@@ -1,6 +1,6 @@
 ![](img/banner.png)
 # Hacker-Hook
-#### hacker-hook v2.6.0 phishing script tool created by [johnsmith](https://github.com/johnsmith80) on github advance phishing tool
+#### hacker-hook v2.6 phishing script tool created by [johnsmith](https://github.com/johnsmith80) on github advance phishing tool
 #### advance phishing attack using NGROK. 36 available Phishing Page and running a server by a
 #### localtunnel and ngrok!
 
@@ -9,7 +9,7 @@
 #### Use for Educational Purposes only. [Issue](https://github.com/johnsmith80/Hacker-Hook/issues) and [Pull request](https://github.com/johnsmith80/Hacker-Hook/pulls) Please Feel free to ask request add some site's. and checkout other [Releases](https://github.com/johnsmith80/Hacker-Hook/releases)
 
 ## Hacker-Hook Feature:
-+ Advance 36 Phishing Pages
++ Advance 37 Phishing Pages
 + Hosted LocalTunnel, Ngrok
 + More Advance and Secured tunneling
 + Generate a best link for you
