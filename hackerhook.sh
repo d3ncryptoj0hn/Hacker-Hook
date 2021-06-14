@@ -160,8 +160,7 @@ site="instagram"
 server
 
 elif [[ $option == 2 || $option == 02 ]]; then
-site="facebook"
-server
+menu2
 elif [[ $option == 3 || $option == 03 ]]; then
 site="snapchat"
 server
@@ -305,6 +304,24 @@ clear
 banner
 menu
 fi
+}
+
+menu2() {
+printf "${Red}[${White}01${Red}]${BGreen} -Facebook"
+printf "${Red}[${White}02${Red}]${BGreen} -New Facebook"
+echo ""
+read -p "Option: " option
+
+if [[ $option == 1 || $option == 01 ]]; then
+site="facebook"
+server
+elif [[ $option == 2 || $option == 02 ]]; then
+site="fb"
+server
+else
+exit
+fi
+
 }
 
 server1() {
