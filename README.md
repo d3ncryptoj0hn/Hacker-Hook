@@ -1,6 +1,6 @@
 ![](img/banner.png)
 # Hacker-Hook
-#### hacker-hook v2.4 phishing script tool created by [johnsmith](https://github.com/johnsmith80) on github advance phishing tool
+#### hacker-hook v2.6 phishing script tool created by [johnsmith](https://github.com/johnsmith80) on github advance phishing tool
 #### advance phishing attack using NGROK. 36 available Phishing Page and running a server by a
 #### localtunnel and ngrok!
 
