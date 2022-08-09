@@ -1,4 +1,5 @@
 #!/bin/bash
+version=2.9
 BGreen='\033[1;32m'       # Green
 BRed='\033[1;31m'         # Red
 printf "${BGreen}Process Start!\n\n"
