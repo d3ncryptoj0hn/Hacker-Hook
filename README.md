@@ -1,48 +1,63 @@
-![](img/banner.png)
-# Hacker-Hook 2.8
-+ hacker-hook v2.8 phishing script tool created by [johnsmith](https://github.com/johnsmith80) on github advance phishing tool advance phishing attack using NGROK. 36 available Phishing Page and running a server by a localtunnel and ngrok!
+<img src="img/banner.png" width="800" >
 
-## Pentester Alert:
-+ Warning Do not user for illegal purposes. any illegal use of this tool is not my responsibility.
-+ Use for Educational Purposes only. [Issue](https://github.com/johnsmith80/Hacker-Hook/issues) and [Pull request](https://github.com/johnsmith80/Hacker-Hook/pulls) Please Feel free to ask request add some site's. and checkout other [Releases](https://github.com/johnsmith80/Hacker-Hook/releases)
+# **Hacker-Hook 2.9**
 
-## Hacker-Hook Feature:
-+ Advance 37 Phishing Pages
-+ Hosted LocalTunnel, Ngrok
++ Hacker-Hook v2.9 is a phishing script tool created by [Johnsmith](https://github.com/johnsmith80) on github written in shell script. This script can perform advance phishing attack, giving you the option to perform phishing so easy and convenient. Its allow you to use 38 phishing pages including Facebook, Instagram, Instafollowers, Gmail, Yahoo, Amazon, Netflix, Spotify, and the new pages added Starbucks portal and WiFi-Firmware upgrade. It also capable of host tunneling by the help of ngrok, localtunnel, and cloudflare which is use for hosting. It does the job well when it comes to hosting your hook over the network. Hacker-Hook makes it easy for pentester to perform quick phishing attack when doing a pentesting.
+
+## **DISCLAMER:**
+* Developers assume NO liability and NOT responsible for any misuse or damage caused by this program. Also we inform you that some of your actions may be **ILLEGAL** and you **CAN NOT** use this tool to test to a person or company without **WRITTEN PERMISSION** from them.
++ [**ISSUE**](https://github.com/johnsmith80/Hacker-Hook/issues) and [**PULL REQUEST**](https://github.com/johnsmith80/Hacker-Hook/pulls). Feel free to give your suggestion and bugs about this tool and request for adding more sites.
++ Check other [RELEASES](https://github.com/johnsmith80/Hacker-Hook/releases)
+
+## **HACKER-HOOK FEATURES:**
++ Advance 38 Phishing Pages
++ Ngrok, Localtunnel, Cloudflare for tunneling
 + More Advance and Secured tunneling
 + Generate a best link for you
 + Easy, Fast & Convenient Phishing attack
-+ Separated Cred's stored
-+ Monitor for incoming Cred's
++ Separated stored Cred's
++ Monitor incoming Cred's
 + Added flavor for more realistic hacking
++ Added hooked fish banner
++ Added -h [help]
++ Added -v [version]
++ Added -i [Dependencies check and Install]
 
 
-### Server:
-+ NGROK click [here](https://ngrok.com/) download & install and get youself an API or else it won't work.
-+ LocalTunnel click [here](https://www.npmjs.com/package/localtunnel) download & install
-## example:
+### TUNNELING OPTION:
++ NGROK click [here](https://ngrok.com/) download & install (required sign up for ngrok API key).
++ LocalTunnel click [here](https://www.npmjs.com/package/localtunnel) install npm.
++ Cloudflare click [here](https://developers.cloudflare.com/cloudflare-one/connections/connect-apps/run-tunnel/as-a-service/linux/) to learn more about cloudflare.
+## SCREENSHOT:
 
-<img src="img/image.png" width="800" >
-<img src="img/image2.png" width="800" >
+<img src="img/1.png" width="600" >
+<img src="img/2.png" width="600" >
+<img src="img/3.png" width="600" >
+<img src="img/4.png" width="700" >
 
-## Usage:
+## INSTALLATION & USAGE:
 ```
   git clone https://github.com/johnsmith80/Hacker-Hook.git
   cd Hacker-Hook
-  ./install.sh
   unzip webpage.zip
-  sudo ./hackerhook.sh.sh
+  sudo ./hackerhook.sh -i
+  sudo ./hackerhook.sh or sudo ./hackerhook.sh run
 ```
-## Caution:
-+ Make sure to apply API for NGROK before using it, NGROK doesn't work anymore without API key. signup to [NGROK](https://ngrok.com/) and get your API key now.
-+ if localtunnel server give you an error like URL doesnt match. maybe the name doesn't allowed to use. then use the url that LocalTunnel provide to you. will try to customize the link name. dont use the same url all the time. thats make the localtunnel triggered to block your requested url-name if ngrok failed or not compatible for your device. download it on there website: [NGROK](https://ngrok.com/) mv on the DarkPhisher directory, unzip the file, then run the dependencies.sh again
 ```  
-  ./install.sh
-  sudo ./hackerhook.sh
+  sudo ./hackerhook.sh -h # for help
+  sudo ./hackerhook.sh -i # for checking dependencies and automatically install them
+  sudo ./hackerhook.sh -v # check version
+  sudo ./hackerhook.sh or sudo ./hackerhook.sh run # to run the program
 ```
 
-Follow me:
-+ [Facebook](https://web.facebook.com/h4ckitnow)
-+ [Tiktok](https://www.tiktok.com/@d3fault80)
-+ [Twitter](https://twitter.com/J0hnSm1th88)
-+ [Youtube](https://www.youtube.com/channel/UCV5gF3dWxUOFoGA7P9NGviQ)
+## ABOUT HOST TUNNELING:
++ Make sure to sign up and register your [NGROK](https://ngrok.com/) API key before running, ngrok doesn't work without API key. [NGROK](https://ngrok.com/) can detect phishing site which then could end of disabling your API key, I suggest using a dummy email when registering for [ngrok](https://ngrok.com/) account.
++ Localtunnel might not work most of the time, If you encounter an error localtunnel didn't give you any link. It might be because of localtunnel service is down. Its happen most of the time since I use it more often than ngrok and cloudflare, The only disadvanges of localtunnel was Its give a warning portal that people should click before they get into the phish site your using.
++ Cloudflare work all the time. like ngrok, cloudflare also detect a phishing site which could give you a head bump when using cloudflare the second time. They might not detect it in the first time you run but running again with the same page might end up being blocked by cloudflare.
+
+
+# **Follow me:**
++ [**Facebook**](https://web.facebook.com/h4ckitnow)
++ [**Tiktok**](https://www.tiktok.com/@d3fault80)
++ [**Twitter**](https://twitter.com/ImportJ0hnSmith)
++ [**Youtube**](https://www.youtube.com/channel/UCV5gF3dWxUOFoGA7P9NGviQ)
