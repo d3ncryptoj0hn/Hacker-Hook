@@ -57,7 +57,7 @@
 
 
 # **Follow me:**
-+ [**Facebook**](https://web.facebook.com/h4ckitnow)
-+ [**Tiktok**](https://www.tiktok.com/@d3fault80)
-+ [**Twitter**](https://twitter.com/ImportJ0hnSmith)
-+ [**Youtube**](https://www.youtube.com/channel/UCV5gF3dWxUOFoGA7P9NGviQ)
++ <img src="https://pngimg.com/uploads/facebook_logos/facebook_logos_PNG19750.png" width="18" > [**Facebook**](https://web.facebook.com/h4ckitnow)
++ <img src="https://cdn4.iconfinder.com/data/icons/social-media-flat-7/64/Social-media_Tiktok-512.png" width="18" > [**Tiktok**](https://www.tiktok.com/@d3fault80)
++ <img src="https://www.iconpacks.net/icons/2/free-twitter-logo-icon-2429-thumb.png" width="18" > [**Twitter**](https://twitter.com/ImportJ0hnSmith)
++ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png" width="18" > [**Youtube**](https://www.youtube.com/channel/UCV5gF3dWxUOFoGA7P9NGviQ)
