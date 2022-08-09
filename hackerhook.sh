@@ -1,5 +1,5 @@
 #!/bin/bash
-# darkphish v2.6
+# Hacker-Hook v2.6
 # color
 # Reset
 clear='\033[0m'       # Text Reset
